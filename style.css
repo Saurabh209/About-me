@@ -174,7 +174,7 @@ a{
       overflow: hidden;
       width: 170px;
       height: 100px;
-      transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+      transition: width 0.4s ease-in-out, height 0.6s ease-in-out;
       border: 2px solid black;
       box-shadow: 4px 4px black;
       border-radius: 5px;
