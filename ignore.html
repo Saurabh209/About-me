@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Effect</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    #text {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .changing {
+      color: red; /* Change the color of the changing part */
+    }
+  </style>
+</head>
+<body>
+  <div id="text"></div>
+
+  <script>
+    const textElement = document.getElementById('text');
+    const words = ['Web Development', 'Noob Development'];
+    let currentWordIndex = 0;
+    let currentCharIndex = 0;
+    const prefixLength = 4; // Length of the unchanged prefix "Development"
+
+    function type() {
+      if (currentCharIndex < words[currentWordIndex].length) {
+        if (currentCharIndex < prefixLength) {
+          textElement.textContent += words[currentWordIndex].charAt(currentCharIndex);
+        } else {
+          textElement.innerHTML = words[currentWordIndex].slice(0, prefixLength) + '<span class="changing">' + words[currentWordIndex].slice(prefixLength, currentCharIndex) + '</span>';
+        }
+        currentCharIndex++;
+        setTimeout(type, 200); // Adjust the typing speed by changing the timeout value
+      } else {
+        setTimeout(deleteAndType, 2000); // Wait for 2 seconds before deleting and typing the next word
+      }
+    }
+
+    function deleteAndType() {
+      if (currentCharIndex > prefixLength) {
+        textElement.innerHTML = words[currentWordIndex].slice(0, prefixLength) + '<span class="changing">' + words[currentWordIndex].slice(prefixLength, currentCharIndex - 1) + '</span>';
+        currentCharIndex--;
+        setTimeout(deleteAndType, 100); // Adjust the deletion speed by changing the timeout value
+      } else {
+        currentWordIndex = (currentWordIndex + 1) % words.length; // Move to the next word
+        setTimeout(type, 500); // Start typing the next word after a short delay
+      }
+    }
+
+    type(); // Start the typing effect
+  </script>
+</body>
+</html>
