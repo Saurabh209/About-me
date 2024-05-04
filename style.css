@@ -61,8 +61,9 @@ a{
     
     /* Navigation Styles */
     nav {
-     /* width: 100%; */
-      /* position: fixed; */
+      z-index: 2;
+     width: 100%;
+      position: fixed;
       background-color: beige;
       color: #323232;
       padding: 10px;
@@ -139,7 +140,8 @@ a{
     /* Header Styles */
     .header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-top: 30px;
+
     }
     
     .header h1 {
