@@ -386,3 +386,30 @@ footer {
     visibility: hidden;
   }
 }
+
+.skills-list {
+  list-style-type: none !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.skill-button {
+  text-decoration: none;
+  background-color: #4a9cf4;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.skill-button:hover {
+  background-color:  rgb(0, 191, 255);
+  transform: scale(1.1);
+}
